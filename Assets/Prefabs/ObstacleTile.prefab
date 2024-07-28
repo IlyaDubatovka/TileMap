@@ -1,5 +1,60 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1523084937713307492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7088449802590812359}
+  - component: {fileID: 477120425811456167}
+  - component: {fileID: 6831859136332281542}
+  m_Layer: 0
+  m_Name: triggerPlane
+  m_TagString: Tile
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7088449802590812359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523084937713307492}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 0.26, y: 1, z: 0.26}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4230068674220092113}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &477120425811456167
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523084937713307492}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6831859136332281542
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523084937713307492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &4822957276665715105
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +67,7 @@ GameObject:
   - component: {fileID: 1679778902369661588}
   m_Layer: 0
   m_Name: ObstacleTile
-  m_TagString: Tile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,6 +91,7 @@ Transform:
   - {fileID: 1107324183550468187}
   - {fileID: 5584742697244960354}
   - {fileID: 5584742697840683691}
+  - {fileID: 7088449802590812359}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59,9 +115,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 4230068674220092113}
     m_Modifications:
+    - target: {fileID: -3281812277924531262, guid: 3d3e1647da524af438765070d6d4fc6c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196648517536708714, guid: 3d3e1647da524af438765070d6d4fc6c, type: 3}
       propertyPath: m_Name
       value: Tile Top 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172201787302145859, guid: 3d3e1647da524af438765070d6d4fc6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5114996075067899094, guid: 3d3e1647da524af438765070d6d4fc6c, type: 3}
       propertyPath: m_RootOrder
@@ -135,6 +199,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 4230068674220092113}
     m_Modifications:
+    - target: {fileID: 2052044029458323476, guid: 1fa087e8b03d6da4d8229fd533a41ce7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4356406458604452569, guid: 1fa087e8b03d6da4d8229fd533a41ce7, type: 3}
       propertyPath: m_Name
       value: LittleStone 2 (1)
@@ -195,6 +263,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9033854074993592453, guid: 1fa087e8b03d6da4d8229fd533a41ce7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa087e8b03d6da4d8229fd533a41ce7, type: 3}
@@ -211,6 +283,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 4230068674220092113}
     m_Modifications:
+    - target: {fileID: 4840709871523979, guid: 162d2f8f57192a14ab9278fc56faf57e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1092910722396494324, guid: 162d2f8f57192a14ab9278fc56faf57e, type: 3}
       propertyPath: m_Name
       value: Tile Bot 1 (1)
@@ -271,6 +347,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6093491989863355560, guid: 162d2f8f57192a14ab9278fc56faf57e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 162d2f8f57192a14ab9278fc56faf57e, type: 3}
@@ -287,6 +367,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 4230068674220092113}
     m_Modifications:
+    - target: {fileID: -4908718115742173628, guid: beddc5e4d12b6024f90228d377522ea3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2005820378363319605, guid: beddc5e4d12b6024f90228d377522ea3, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -342,6 +426,10 @@ PrefabInstance:
     - target: {fileID: 2005820378363319605, guid: beddc5e4d12b6024f90228d377522ea3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000339086522784859, guid: beddc5e4d12b6024f90228d377522ea3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8410973055383580539, guid: beddc5e4d12b6024f90228d377522ea3, type: 3}
       propertyPath: m_Name
@@ -423,6 +511,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigStone 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4185349997380471335, guid: bff151e1d30ee48468a63710c35596a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861584867640818457, guid: bff151e1d30ee48468a63710c35596a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: bff151e1d30ee48468a63710c35596a9, type: 3}
@@ -442,6 +538,14 @@ PrefabInstance:
     - target: {fileID: 1171907984793937626, guid: 5119d5f0634b90c4fa893861654e81b3, type: 3}
       propertyPath: m_Name
       value: LittleStone 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797062814015420438, guid: 5119d5f0634b90c4fa893861654e81b3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903939280359457058, guid: 5119d5f0634b90c4fa893861654e81b3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4884336395243390186, guid: 5119d5f0634b90c4fa893861654e81b3, type: 3}
       propertyPath: m_RootOrder
@@ -574,6 +678,14 @@ PrefabInstance:
     - target: {fileID: 580634697771481362, guid: bff151e1d30ee48468a63710c35596a9, type: 3}
       propertyPath: m_Name
       value: BigStone 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185349997380471335, guid: bff151e1d30ee48468a63710c35596a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861584867640818457, guid: bff151e1d30ee48468a63710c35596a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

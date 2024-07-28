@@ -1,16 +1,14 @@
-
 using UnityEngine;
-
 
 
 public class TileController : MonoBehaviour
 {
     private Grid _grid;
     private Camera _camera;
-    private Renderer[] _renderers ;
-    private Color[] _startColors ;
+    private Renderer[] _renderers;
+    private Color[] _startColors;
     private bool isPositioning = true;
-    private Collider[] _colliders;
+    private Collider _triggerPlane;
 
 
     private void Awake()
@@ -23,12 +21,11 @@ public class TileController : MonoBehaviour
         {
             _startColors[i] = _renderers[i].material.color;
         }
-        _colliders = GetComponentsInChildren<Collider>();
-        for (var i = 0; i < _colliders.Length; i++)
-        {
-            _colliders[i].enabled = false;
-        }
+
+        _triggerPlane = transform.Find(GlobalConstants.TRIGGER_PLANE).GetComponent<Collider>();
+        _triggerPlane.enabled = false;
     }
+
     private void Update()
     {
         if (!isPositioning)
@@ -39,7 +36,7 @@ public class TileController : MonoBehaviour
 
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo) )
+        if (Physics.Raycast(ray, out hitInfo))
         {
             var cellPosition = _grid.WorldToCell(hitInfo.point);
             var cellCenter = _grid.GetCellCenterWorld(cellPosition);
@@ -53,10 +50,7 @@ public class TileController : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Mouse0))
                 {
-                    for (var i = 0; i < _colliders.Length; i++)
-                    {
-                        _colliders[i].enabled = true;
-                    }
+                    _triggerPlane.enabled = true;
                     isPositioning = false;
                     var settingPoint = new Vector3(cellCenter.x, 0, cellCenter.z);
                     transform.position = settingPoint;
@@ -66,6 +60,7 @@ public class TileController : MonoBehaviour
                     }
                 }
             }
+
             if (!hitInfo.transform.CompareTag(GlobalConstants.GROUND_TAG))
             {
                 cellPosition = _grid.WorldToCell(hitInfo.point);
@@ -75,12 +70,7 @@ public class TileController : MonoBehaviour
                 {
                     _renderers[i].material.color = Color.red;
                 }
-                // for (var i = 0; i < _renderers.Length; i++)
-                // {
-                //     Debug.Log(_renderers[i].material.color);
-                // }
             }
         }
-
     }
 }
